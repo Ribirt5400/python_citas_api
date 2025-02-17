@@ -18,6 +18,13 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
+Activamos el Virtual env con: 
+
+
+```bash
+.\venv\Scripts\activate.bat
+```
+
 ### 2. Instalar Dependencias
 
 Una vez activado el entorno virtual, instala las dependencias del proyecto desde `requirements.txt`:
