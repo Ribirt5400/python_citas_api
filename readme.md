@@ -9,20 +9,13 @@ Este proyecto es una API desarrollada en Flask que utiliza MongoDB como base de 
 Antes de instalar las dependencias, es recomendable crear un entorno virtual para el proyecto:
 
 ```bash
-# En Windows
+# En Windows (USAMOS CMD)
 python -m venv venv
-venv\Scripts\activate
+.\venv\Scripts\activate.bat
 
 # En macOS/Linux
 python3 -m venv venv
 source venv/bin/activate
-```
-
-Activamos el Virtual env con: 
-
-
-```bash
-.\venv\Scripts\activate.bat
 ```
 
 ### 2. Instalar Dependencias
