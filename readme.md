@@ -54,11 +54,7 @@ El servidor se ejecutará en `http://0.0.0.0:5000/` y será accesible en la red 
 
 ## Configuración de la Base de Datos MongoDB
 
-Para que la API funcione correctamente, debes crear una base de datos llamada **Clinica** en MongoDB con las siguientes colecciones:
-
-1. **usuarios**
-2. **centros**
-3. **citas**
+Para que la API funcione correctamente, debes hacer una llamada a la url de la api /migracion para que se agregen los cambos a la base de datos
 
 ---
 

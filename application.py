@@ -519,6 +519,27 @@ def getDates():
    
     return jsonify(format_dates(list(dates)))
 
+@app.route("/migracion", methods=['GET'])
+def migracion():
+
+    dblist = myclient.list_database_names()
+    if "Clinica" not in dblist:
+        mydb = myclient["Clinica"]
+        collections = ["usuarios", "centros", "citas"]
+
+        for collection in collections:
+            mydb.create_collection(collection)
+
+        # Insert two centers related to Madrid
+        mydb["centros"].insert_many([
+            {"name": "Centro de Salud Madrid Norte", "address": "Calle de la Salud, 123, Madrid"},
+            {"name": "Centro Médico Madrid Sur", "address": "Avenida de la Medicina, 456, Madrid"}
+        ])
+
+        return jsonify({"msg": "Database and collections created"}), 200
+    else:
+        return jsonify({"msg": "Database already exists"}), 200
+
 
 def format_dates(dates):
     result = []
