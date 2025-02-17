@@ -117,6 +117,7 @@ def register():
                 date:
                     type: string
                     format: date
+                    example: "25/12/2025"
                     description: Fecha de nacimiento en formato DD/MM/YYYY
     responses:
         200:
@@ -233,6 +234,7 @@ def profile():
                     date:
                         type: string
                         description: Fecha de nacimiento del usuario
+                        example: "25/12/2025"
     """
     current_user = get_jwt_identity()
     mydb = myclient["Clinica"]
@@ -381,7 +383,7 @@ def getDateByUser():
                                     description: Nombre de usuario.
                                 date:
                                     type: string
-                                    format: date-time
+                                    example: "25/12/2025 14:00:00"
                                     description: Fecha y hora de la cita.
                                 other_fields:
                                     type: string
@@ -418,6 +420,7 @@ def deleteDate():
                 date:
                     type: string
                     description: Fecha y hora de la cita en formato 'dd/mm/yyyy HH:00:00'
+                    example: "25/12/2025 14:00:00"
                 center:
                     type: string
                     description: Centro donde se realizará la cita
@@ -485,7 +488,7 @@ def getDates():
     Obtiene las citas no canceladas del usuario actual.
     ---
     tags:
-        - citas
+        - Citas
     responses:
         200:
             description: Una lista de citas no canceladas.
