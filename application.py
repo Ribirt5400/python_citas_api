@@ -14,8 +14,12 @@ from flasgger import Swagger
 import pymongo
 import bcrypt
 
+from flask_cors import CORS
+
 
 app = Flask(__name__)
+
+CORS(app)
 
 app.config["JWT_SECRET_KEY"] = "misuperclavedeldestinofinal"
 
@@ -75,6 +79,9 @@ def login():
 
     username = request.json.get('username', None)
     password = request.json.get('password', None)
+
+    print(username)
+    print(password)
 
     if not username or not password:
         return jsonify({"msg": "Bad username or password"}), 401
